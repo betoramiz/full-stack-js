@@ -1,0 +1,19 @@
+{
+  "name": "core-cli",
+  "version": "0.1.0",
+  "bin": {
+    "bun-hono-feature": "./index.js"
+  },
+  "description": "A Bun and Hono feature scaffolding CLI.",
+  "type": "commonjs",
+  "scripts": {
+    "generate:feature": "bun run index.js generate-feature"
+  },  
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "handlebars": "^4.7.9"
+  }
+}

@@ -1,0 +1,13 @@
+import { Hono } from "hono";
+
+export const make{{FeatureName}}Routes = () => {
+  const router = new Hono();
+
+  router.get("list", (c) => {
+    return c.json({
+      message: "Hello World!",
+    });
+  });
+
+  return router;
+};

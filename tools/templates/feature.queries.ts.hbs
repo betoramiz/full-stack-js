@@ -1,0 +1,7 @@
+export const make{{featureVariableName}}Queries = () => ({
+  getItems: async (): Promise<string> => {
+    return Promise.resolve('Hello world');
+  }  
+})
+
+export type {{featureVariableName}}Queries = ReturnType<typeof make{{featureVariableName}}Queries>;
