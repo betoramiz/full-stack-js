@@ -156,7 +156,7 @@ async function createFeature(rawName, options) {
 }
 
 program
-  .name("bun-hono-feature")
+  .name("create-feature")
   .description("Generate consistent feature folders for Bun and Hono applications")
   .version("0.1.0");
 

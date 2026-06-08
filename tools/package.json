@@ -2,7 +2,7 @@
   "name": "core-cli",
   "version": "0.1.0",
   "bin": {
-    "bun-hono-feature": "./index.js"
+    "create-feature": "./index.js"
   },
   "description": "A Bun and Hono feature scaffolding CLI.",
   "type": "commonjs",

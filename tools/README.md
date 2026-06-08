@@ -1,28 +1,53 @@
-# Bun Hono Feature CLI
+# Core CLI (`create-feature`)
 
 A small scaffolding CLI for generating consistent feature folders in Bun and Hono applications.
 
-## Install
+## Installation
 
-From a local path:
+You can install this tool as a development dependency.
+
+From the local directory:
 
 ```bash
-bun add -d ../path/to/bun-hono-feature-cli
+bun add -d ./tools
 ```
 
-From a published package:
+Or from a published package (if applicable):
 
 ```bash
-bun add -d bun-hono-feature-cli
+bun add -d core-cli
 ```
 
 ## Usage
 
+Once installed, the CLI is available via the `create-feature` command (using `bunx`).
+
+### Generate a Feature
+
+You can run the default generator command using `create-feature` directly:
+
 ```bash
-bun-hono-feature generate-feature purchases --base-dir src/features
+bunx create-feature purchases --base-dir src/features
 ```
 
-This creates:
+#### Shortcuts / Aliases
+
+The default command is `generate-feature` (alias `gf`). Because it is configured as the default command, you can run it in any of the following ways:
+
+- **Direct (Implicit command):**
+  ```bash
+  bunx create-feature purchases --base-dir src/features
+  ```
+- **With shortcut (`gf`):**
+  ```bash
+  bunx create-feature gf purchases --base-dir src/features
+  ```
+- **Explicit command (`generate-feature`):**
+  ```bash
+  bunx create-feature generate-feature purchases --base-dir src/features
+  ```
+
+This creates the following structure:
 
 ```txt
 src/features/purchases/
@@ -36,13 +61,17 @@ src/features/purchases/
   purchases.schemas.ts
 ```
 
-## Interactive Usage
+### Interactive Mode
 
-If no feature name is passed, the CLI prompts for one:
+If you do not pass a feature name, the CLI will prompt you for one:
 
 ```bash
-bun-hono-feature generate-feature
+bunx create-feature
 ```
+
+## Options
+
+- `-b, --base-dir <path>`: The base directory where the feature folder will be generated (defaults to `.` if not specified).
 
 ## Templates
 
@@ -52,10 +81,10 @@ Templates are stored in:
 templates/
 ```
 
-Available variables:
+Available variables in templates:
 
 ```txt
-{{featureName}}          kebab-case feature name, for example credit-cards
-{{FeatureName}}          PascalCase feature name, for example CreditCards
-{{featureVariableName}}  underscore variable name, for example credit_cards
+{{featureName}}          kebab-case feature name (e.g., credit-cards)
+{{FeatureName}}          PascalCase feature name (e.g., CreditCards)
+{{featureVariableName}}  underscore variable name (e.g., credit_cards)
 ```
