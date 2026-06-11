@@ -1,7 +1,7 @@
-export const make{{featureVariableName}}Queries = () => ({
+export const make{{featureClassName}}Queries = () => ({
   getItems: async (): Promise<string> => {
     return Promise.resolve('Hello world');
   }  
 })
 
-export type {{featureVariableName}}Queries = ReturnType<typeof make{{featureVariableName}}Queries>;
+export type {{featureClassName}}Queries = ReturnType<typeof make{{featureClassName}}Queries>;
